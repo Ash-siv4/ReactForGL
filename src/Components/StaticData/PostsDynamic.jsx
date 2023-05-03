@@ -1,11 +1,12 @@
 import dummyData from "./DummyData.json";
+import { Table } from "reactstrap";
 
 const PostsDynamic = () => {
     const myD = dummyData[0];
     const myKey = Object.keys(myD);
     return (
         <>
-            <table>
+            <Table bordered striped variant="dark">
                 <thead>
                     <tr>
                         {myKey.map((key) => (
@@ -22,7 +23,7 @@ const PostsDynamic = () => {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </Table>
         </>
     )
 }

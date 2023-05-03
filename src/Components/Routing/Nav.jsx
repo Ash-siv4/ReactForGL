@@ -17,6 +17,9 @@ const Nav = () => {
                     <li>
                         <Link to="/pg2">Page 2</Link>
                     </li>
+                    <li>
+                        <Link to="/users">Users</Link>
+                    </li>
                 </ul>
             </nav>
         </div>

@@ -9,11 +9,17 @@ import About from './Components/Routing/About';
 import Page1 from './Components/Routing/Page1';
 import Page2 from './Components/Routing/Page2';
 import NotFound from './Components/Routing/NotFound';
+import UseStateEx from './Components/Hooks/UseStateEx';
+import UseEffectEx from './Components/Hooks/UseEffectEx';
+import Users from './Components/Routing/Users';
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+    {/* <UseStateEx/> */}
+    <UseEffectEx/>
+
+    {/* <BrowserRouter>
     <Nav/>
     <Route path="/" exact>
       <Home/>
@@ -27,10 +33,13 @@ function App() {
     <Route path="/pg2">
       <Page2/>
     </Route>
+    <Route path="/users/:id/:name">
+      <Users/>
+    </Route>
     <Route path="/404">
       <NotFound/>
     </Route>
-    </BrowserRouter>
+    </BrowserRouter> */}
 
     {/* <Posts/> */}
     {/* <PostsDynamic/> */}
