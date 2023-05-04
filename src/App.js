@@ -12,12 +12,14 @@ import NotFound from './Components/Routing/NotFound';
 import UseStateEx from './Components/Hooks/UseStateEx';
 import UseEffectEx from './Components/Hooks/UseEffectEx';
 import Users from './Components/Routing/Users';
+import Tesco from './Components/DataRequ/Tesco';
 
 function App() {
   return (
     <>
+    <Tesco/>
     {/* <UseStateEx/> */}
-    <UseEffectEx/>
+    {/* <UseEffectEx/> */}
 
     {/* <BrowserRouter>
     <Nav/>

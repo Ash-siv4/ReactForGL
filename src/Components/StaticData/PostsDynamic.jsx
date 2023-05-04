@@ -7,6 +7,7 @@ const PostsDynamic = () => {
     return (
         <>
             <Table bordered striped variant="dark">
+                {/* <table> */}
                 <thead>
                     <tr>
                         {myKey.map((key) => (
@@ -23,6 +24,7 @@ const PostsDynamic = () => {
                         </tr>
                     ))}
                 </tbody>
+                {/* </table> */}
             </Table>
         </>
     )
