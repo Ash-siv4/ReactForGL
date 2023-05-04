@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Employee from "./Employee";
-import { Spinner, Table } from "reactstrap";
+import { Container, Spinner, Table } from "reactstrap";
 
 const Tesco = () => {
     //State to store the data as it changes
@@ -21,7 +21,8 @@ const Tesco = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            axios.get("https://reqres.in/api/users")
+            // axios.get("https://reqres.in/api/users/page=2")//try uncommenting this line to see how the error in the if-statement works
+            axios.get("https://reqres.in/api/users?page=1")
                 .then((response) => {
                     setLoaded(true);
                     setData(response.data.data)
@@ -49,40 +50,46 @@ const Tesco = () => {
         return (
             <>
                 <p>Loading data...</p>
-                <Spinner type="grow" color="primary" />
+                <Spinner type="grow" color="danger" />
             </>
         )
     } else {
         return (
             <>
                 <h1>Tesco Employees</h1>
-                <Table striped>
-                    {/* <table> */}
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Email</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Avatar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            data.map((emp) => (
-                                <tr>
-                                    <Employee person={emp} />
-                                    {/* <td>{emp.id}</td>
+                <Container>
+                    <Table
+                        hover
+                        responsive
+                        size=""
+                        className="table-primary">
+                        {/* <table> */}
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Email</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Avatar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                data.map((emp) => (
+                                    <tr>
+                                        <Employee person={emp} />
+                                        {/* <td>{emp.id}</td>
                                     <td>{emp.email}</td>
                                     <td>{emp.first_name}</td>
                                     <td>{emp.last_name}</td>
                                     <td><img src={emp.avatar} /></td> */}
-                                </tr>
-                            ))
-                        }
-                    </tbody>
-                    {/* </table> */}
-                </Table>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                        {/* </table> */}
+                    </Table>
+                </Container>
             </>
         )
     }
