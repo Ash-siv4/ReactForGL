@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Employee from "./Employee";
-import { Container, Spinner, Table } from "reactstrap";
+import { Button, Container, Spinner, Table } from "reactstrap";
 
 const Tesco = () => {
     //State to store the data as it changes
@@ -49,8 +49,19 @@ const Tesco = () => {
     } else if (!loaded) {
         return (
             <>
-                <p>Loading data...</p>
-                <Spinner type="grow" color="danger" />
+                {/* <p>Loading data...</p>
+                <Spinner type="grow" color="danger" /> */}
+                <Button
+                    color="success"
+                    disabled
+                >
+                    <Spinner size="sm">
+                        Loading...
+                    </Spinner>
+                    <span>
+                        {' '}Loading
+                    </span>
+                </Button>
             </>
         )
     } else {
